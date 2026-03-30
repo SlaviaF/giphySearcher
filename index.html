@@ -13,12 +13,20 @@
 
     <div class=container>
         <h1>Giphy searcher</h1>
+        <div>
+            <label for="gifType">Search GIFs for:</label></br>
+            <input type="text" id="gifType" value="smile" />
+        </div>
 
-        <input type="text" id="gifType" name="gifType" placeholder="Giphy type">
-        <input type="number" id="noOfGif" placeholder="Select number">
-        <button id="searchGifBtn">Search for gif</button>
+        <div>
+            <label for="noOfGif">Number of GIFs:</label></br>
+            <input type="number" id="noOfGif" value="10" />
+        </div>
+        <button id="searchGifBtn">Search GIFs</button>
 
     </div>
+
+
 
     <div class="displayImages"></div>
 
