@@ -1,33 +1,121 @@
-*{
-    margin:0;
-    padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-image: linear-gradient(to right, rgb(163, 215, 230), rgb(165, 238, 116));
+
+:root {
+    --bg: #0a1628;
+    --accent: #00c9c8;
+    --accent2: #ff6b6b;
+    --text: #ffffff;
+    --text-muted: #8899aa;
+    --card-border: #1e3a5f;
 }
 
-.container{
-    display: grid;
-    place-items: center;
-}
-.displayImages{
-    display: grid;
-    place-items: center;
-}
-
-.container>*{
-    margin:10px;
-    padding:5px;
-}
-h1{
-    font-size: 3em;
-font-family: cursive;
-color:rgb(29, 3, 58);
+body {
+    background-color: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(0, 201, 200, 0.12) 0%, transparent 60%);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    color: var(--text);
 }
 
-input,button{
-    width: 250px;
-    padding:20px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 32px;
+    gap: 14px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+
+input {
+    width: 280px;
+    padding: 12px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--card-border);
+    border-radius: 8px;
+    outline: none;
     text-align: center;
+    transition: border-color 0.2s;
 }
+
+input::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+
+#searchGifBtn {
+    width: 280px;
+    padding: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 4px;
+}
+
+#searchGifBtn:hover {
+    background: var(--accent2);
+    transform: translateY(-2px);
+}
+
+#searchGifBtn:active {
+    transform: translateY(0);
+}
+
+.displayImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.displayImages img {
+    display: block !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1.5px solid var(--card-border);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.displayImages img:hover {
+    transform: scale(1.04);
+    border-color: var(--accent);
+}
+
+
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
